@@ -1,7 +1,7 @@
 //Jenkins file only to tutorial example
 pipeline {
   agent any
-  tools {nodejs 'node'}
+  tools {nodejs "node"}
   stages {       
     stage('Install dependencies') {
       steps {
