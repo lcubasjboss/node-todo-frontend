@@ -1,6 +1,6 @@
 //Jenkins file only to tutorial example
 pipeline {
-  agent "ssh-agent-1"
+  agent any
   stages {       
     stage('Install dependencies') {
       steps {
