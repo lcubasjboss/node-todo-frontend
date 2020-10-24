@@ -6,11 +6,11 @@ pipeline {
       steps {
         echo "Ingreso a instalar dependencias"
         nodejs(nodeJSInstallationName: 'node', configId: '<config-file-provider-id>') {
-        sh 'npm config ls'
-        sh 'npm install'
-      }
-    }
-     
+         sh 'npm config ls'
+         sh 'npm install'
+         }
+       }
+    }     
     stage('Test') {
       steps {
          echo "Ingreso a realizar pruebas"
