@@ -5,7 +5,7 @@ pipeline {
     stage('Install dependencies') {
       steps {
         echo "Ingreso a instalar dependencias"
-        nodejs(nodeJSInstallationName: 'node', configId: 'f64b5426-4f20-477f-9444-7f566d885a07') {
+        nodejs(nodeJSInstallationName: 'nodeJS', configId: 'f64b5426-4f20-477f-9444-7f566d885a07') {
          sh 'npm config ls'
          sh 'npm install'
          }
