@@ -4,22 +4,17 @@ pipeline {
     
   tools {nodejs "node"}
     
-  stages {
-        
-    stage('Cloning Git') {
-      steps {
-        git 'https://github.com/lcubasjboss/node-todo-frontend'
-      }
-    }
-        
+  stages {       
     stage('Install dependencies') {
       steps {
+        echo "Ingreso a instalar dependencias"
         sh 'npm install'
       }
     }
      
     stage('Test') {
       steps {
+         echo "Ingreso a realizar pruebas"
          sh 'npm test'
       }
     }      
