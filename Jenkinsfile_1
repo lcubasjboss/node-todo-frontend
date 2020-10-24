@@ -1,15 +1,17 @@
 //Jenkins file only to tutorial example
-pipeline {
-  agent any
+pipeline { 
+  agent {
+        docker {
+            image 'node:6-alpine'
+            args '-p 3000:3000'
+        }
+    }
   stages {       
     stage('Install dependencies') {
       steps {
         echo "Ingreso a instalar dependencias"
-        nodejs(nodeJSInstallationName: 'nodeJS', configId: 'f64b5426-4f20-477f-9444-7f566d885a07') {
-         sh 'npm config ls'
-         sh 'npm install'
+        sh 'npm install'
          }
-       }
     }     
     stage('Test') {
       steps {
@@ -17,5 +19,4 @@ pipeline {
          sh 'npm test'
       }
     }      
-  }
 }
